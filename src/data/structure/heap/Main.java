@@ -1,12 +1,17 @@
 package data.structure.heap;
 
+import java.util.Comparator;
+import java.util.PriorityQueue;
+import java.util.Queue;
+
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         //testCase1();
         //testCase2();
-        testCase3();
+        //testCase3();
+        testCase4();
     }
 
     private static void testCase1() {
@@ -40,7 +45,7 @@ public class Main {
         maxHeap.insert(35);
     }
 
-    private static void testCase3() {
+    private static void testCase3() throws Exception{
         MaxHeap maxHeap = new MaxHeap();
 
         maxHeap.insert(40);
@@ -58,7 +63,27 @@ public class Main {
         System.out.println("Removed " + maxHeap.delete());
         System.out.println("Removed " + maxHeap.delete());
         System.out.println("Removed " + maxHeap.delete());
-        //System.out.println("Removed " + maxHeap.delete());
+        System.out.println("Removed " + maxHeap.delete());
+    }
 
+    private static void testCase4() throws Exception{
+
+        Queue<Integer> priorityQueue = new PriorityQueue<>(Comparator.reverseOrder());
+        priorityQueue.add(40);
+        priorityQueue.add(35);
+        priorityQueue.add(30);
+        priorityQueue.add(15);
+        priorityQueue.add(10);
+        priorityQueue.add(25);
+        priorityQueue.add(5);
+
+        System.out.println(priorityQueue.remove());
+        System.out.println(priorityQueue.remove());
+        System.out.println(priorityQueue.remove());
+        System.out.println(priorityQueue.remove());
+        System.out.println(priorityQueue.remove());
+        System.out.println(priorityQueue.remove());
+        System.out.println(priorityQueue.remove());
+        //System.out.println(priorityQueue.remove());
     }
 }

@@ -55,7 +55,11 @@ public class MaxHeap {
         System.out.println();
     }
 
-    public Integer delete(){
+    public Integer delete() throws Exception{
+
+        if(arr.size()<=1){
+            throw new Exception("The heap is empty");
+        }
 
         Integer deletedRoot = arr.get(1);
         boolean keepLooking = false;
